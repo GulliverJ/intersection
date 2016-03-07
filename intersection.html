@@ -6,7 +6,49 @@
 </head>
 
 <body>
-  <canvas id="canvas" oncontextmenu="return false;"></canvas>
+	<div class="sidebar">
+		<h1>Smart Intersection</h1>
+		<p style="font-weight: bolder; line-height: 10px; margin: 0px; text-align: right; color: #222">v0.1</p>
+		<p>In an environment where vehicles are fully autonomous, the inefficiencies that arise from existing traffic flow control measures (such as traffic lights) can be mitigated entirely. A smart intersection enables seamless coordination of incoming traffic, such that throughput can be maximised whilst avoiding any risk of collision. The intersection controller is responsible for scheduling and monitoring vehicles as they pass through, whilst the vehicles themselves are responsible only for driving as instructed.</p>
+		<p>This prototype implementation uses timestamp-based locking, assigning to each incoming vehicle a time of arrival that allows for safe passage. Vehicles generated with a randomly chosen path and are then dynamically scheduled in real-time. Later versions will offer controls to enable a user to influence the speed and traffic flow.</p>
+		<hr>
+		<h2>Development Plan</h2>
+		<h3>v1.0 <span style="font-style: italic;font-weight: lighter; color: #888">- Estimated early April</span></h3>
+		<ul>
+			<li>Redesigned scheduling algorithm for maximum efficiency</li>
+			<li>Acceleration/deceleration to be modelled</li>
+			<li>Intersection expanded to 4 lanes in each direction</li>
+		</ul>
+		<h3>v1.1</h3>
+		<ul>
+			<li>Increased interaction, e.g. setting radius of 'sight', traffic controls</li>
+			<li>Realtime comparison to corresponding traffic light simulation</li>
+		</ul>
+		<h3>v1.2</h3>
+		<ul>
+			<li>Modelling of different vehicle types</li>
+		</ul>
+		<h3>Future</h3>
+		<ul>
+			<li>Simulated solutions for pedestrian crossings</li>
+		</ul>
+		<hr>
+		<!--Speed: <input type="number" id="speedSetting" value="0.1">
+		Traffic Flow:
+		North: <input type="checkbox" id="nflow" value="north" checked>
+		East: <input type="checkbox" id="eflow" value="east" checked>
+		South: <input type="checkbox" id="sflow" value="south" checked>
+		West: <input type="checkbox" id="wflow" value="west" checked-->
+	</div>
+	
+	<div id="container">
+        <canvas id="canvas" oncontextmenu="return false;"></canvas>
+        <div id="overlay">
+        	<h2 style="color: #bbb; padding: 12px; position: absolute; left: calc(100vw - 500px); top: calc(100vh - 84px); text-align: right">PROTOTYPE v0.1</h2>
+        	<div class="blocklabel">
+        	</div>
+        </div>
+    </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
